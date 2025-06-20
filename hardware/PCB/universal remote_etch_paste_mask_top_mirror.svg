@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!-- Created with Fritzing (https://fritzing.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" height="1.9685in" version="1.2" viewBox="0 0 99.2469 141.732" width="1.37843in" x="0in"  xmlns:svg="http://www.w3.org/2000/svg" y="0in">
+ <g transform="matrix(-1, 0, 0, 1, 99.2469, 0)">
+  <g partID="57880">
+   <g transform="translate(99.2469,0)">
+    <g transform="matrix(0,1,-1,0,0,0)">
+     <g id="board" >
+      <rect fill="none" fill-opacity="0.5" height="98.6709" id="boardoutline" stroke="black" stroke-width="0.5" width="141.156" x="0.288"  y="0.288"/>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="855150880">
+   <g transform="translate(19.2338,11.1929)">
+    <g transform="matrix(0,-1,1,0,0,0)">
+     <g id="copper1" >
+      <rect connectorname="1" fill="black" height="2.55118" id="0" stroke="none" stroke-linecap="round" stroke-width="0" width="1.98425" x="0"  y="0"/>
+      <rect connectorname="2" fill="black" height="2.55118" id="1" stroke="none" stroke-linecap="round" stroke-width="0" width="1.98425" x="3.68504"  y="0"/>
+      <g id="2" />
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="855150860">
+   <g transform="translate(12.0338,11.1929)">
+    <g transform="matrix(0,-1,1,0,0,0)">
+     <g id="copper1" >
+      <rect connectorname="1" fill="black" height="2.55118" id="3" stroke="none" stroke-linecap="round" stroke-width="0" width="1.98425" x="0"  y="0"/>
+      <rect connectorname="2" fill="black" height="2.55118" id="4" stroke="none" stroke-linecap="round" stroke-width="0" width="1.98425" x="3.68504"  y="0"/>
+      <g id="5" />
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="855150802">
+   <g transform="translate(21.5174,60.5157)">
+    <g transform="matrix(0,1,-1,0,0,0)">
+     <g id="copper1" >
+      <g id="copper0" >
+       <g cx="3.6" cy="8.208" fill="none" id="6" r="1.98" stroke="black" stroke-width="1.44" />
+       <g cx="10.8" cy="8.208" fill="none" id="7" r="1.98" stroke="black" stroke-width="1.44" />
+       <g cx="18" cy="8.208" fill="none" id="8" r="1.98" stroke="black" stroke-width="1.44" />
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="855150822">
+   <g transform="translate(10.9694,45.2157)">
+    <g transform="matrix(0,-1,1,0,0,0)">
+     <g id="copper1" >
+      <g connectorname="A" cx="9.9" cy="2.34" fill="none" id="9" r="1.49386" stroke="black" stroke-width="0.72" />
+      <g connectorname="C" cx="2.7" cy="2.34" fill="none" id="10" r="1.49386" stroke="black" stroke-width="0.72" />
+      <g id="copper0" >
+       <g connectorname="A" cx="9.9" cy="2.34" fill="none" id="11" r="1.49386" stroke="black" stroke-width="0.72" />
+       <g connectorname="C" cx="2.7" cy="2.34" fill="none" id="12" r="1.49386" stroke="black" stroke-width="0.72" />
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="855150902">
+   <g transform="translate(96.3446,2.71173)">
+    <g transform="matrix(0,1,-1,0,0,0)">
+     <g id="copper1" >
+      <g id="copper0" >
+       <g cx="3.83597" cy="68.5907" fill="none" id="13" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="11.0653" cy="68.5907" fill="none" id="14" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="18.2209" cy="68.5907" fill="none" id="15" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="25.4502" cy="68.5907" fill="none" id="16" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="32.6058" cy="68.5907" fill="none" id="17" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="39.8351" cy="68.5907" fill="none" id="18" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="47.0644" cy="68.5907" fill="none" id="19" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="54.22" cy="68.5907" fill="none" id="20" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="61.4493" cy="68.5907" fill="none" id="21" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="68.6049" cy="68.5907" fill="none" id="22" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="75.8342" cy="68.5907" fill="none" id="23" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="83.0635" cy="68.5907" fill="none" id="24" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="90.2191" cy="68.5907" fill="none" id="25" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="97.4484" cy="68.5907" fill="none" id="26" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="104.604" cy="68.5907" fill="none" id="27" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="111.833" cy="68.5907" fill="none" id="28" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="118.989" cy="68.5907" fill="none" id="29" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="126.218" cy="68.5907" fill="none" id="30" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="133.448" cy="68.5907" fill="none" id="31" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="133.448" cy="3.83518" fill="none" id="32" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="126.218" cy="3.83518" fill="none" id="33" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="118.989" cy="3.83518" fill="none" id="34" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="111.833" cy="3.83518" fill="none" id="35" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="104.604" cy="3.83518" fill="none" id="36" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="97.4484" cy="3.83518" fill="none" id="37" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="90.2191" cy="3.83518" fill="none" id="38" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="83.0635" cy="3.83518" fill="none" id="39" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="75.8342" cy="3.83518" fill="none" id="40" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="68.6049" cy="3.83518" fill="none" id="41" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="61.4493" cy="3.83518" fill="none" id="42" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="54.22" cy="3.83518" fill="none" id="43" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="47.0644" cy="3.83518" fill="none" id="44" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="39.8351" cy="3.83518" fill="none" id="45" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="32.6058" cy="3.83518" fill="none" id="46" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="25.4502" cy="3.83518" fill="none" id="47" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="18.2209" cy="3.83518" fill="none" id="48" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="11.0653" cy="3.83518" fill="none" id="49" r="1.99175" stroke="black" stroke-width="1.19025" />
+       <g cx="3.83597" cy="3.83518" fill="none" id="50" r="1.99175" stroke="black" stroke-width="1.19025" />
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="855150762">
+   <g transform="translate(8.26941,123.876)">
+    <g gorn="0.2" id="copper1" >
+     <g gorn="0.2.0" id="copper0" >
+      <g cx="5.04" cy="5.04" fill="none" gorn="0.2.0.0" id="51" r="2.088" stroke="black" stroke-width="1.44" />
+      <g cx="5.04" cy="12.24" fill="none" gorn="0.2.0.1" id="52" r="2.088" stroke="black" stroke-width="1.44" />
+     </g>
+    </g>
+   </g>
+  </g>
+  <g partID="855156802">
+   <g transform="translate(8.26941,80.6757)">
+    <g gorn="0.2" id="copper1" >
+     <g gorn="0.2.0" id="copper0" >
+      <g cx="5.04" cy="5.04" fill="none" gorn="0.2.0.0" id="53" r="2.84599" stroke="black" stroke-width="1.44" />
+      <g cx="5.04" cy="12.24" fill="none" gorn="0.2.0.1" id="54" r="2.84599" stroke="black" stroke-width="1.44" />
+      <g cx="5.04" cy="19.44" fill="none" gorn="0.2.0.2" id="55" r="2.84599" stroke="black" stroke-width="1.44" />
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

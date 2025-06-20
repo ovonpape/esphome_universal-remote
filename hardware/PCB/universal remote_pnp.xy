@@ -1,0 +1,23 @@
+# Pick And Place List
+# Company=
+# Author=
+# eMail=
+#
+# Project=universal remote
+# Date=16:29:32
+# CreatedBy=Fritzing 1.0.2b.2023-12-20.1.0.2
+#
+#
+# Coordinates in mils, always center of component
+# Origin 0/0=Lower left corner of PCB
+# Rotation in degree (0-360, math. pos.)
+#
+RefDes,Description,Package,X,Y,Rotation,Side,Mount
+Description: resistance;capacitance;inductance;voltage;current;power;mpn;mn;
+sensor,";;;;;;;;","THT",184.853,678.008,0,Top,THT
+R2,"22;;;;;;;;","0402 [SMD]",284.853,1852.42,-90,Top,SMT
+U1,";;;;;;;;","",834.649,976.971,90,Top,MANUAL
+Q1,";;;;;;;;","TO92 [THT]",181.353,985.508,90,Top,THT
+R1,"22;;;;;;;;","0402 [SMD]",184.853,1852.42,-90,Top,SMT
+power,";;;;;;;;","THT",184.853,128.008,0,Top,THT
+D1,";;;;;;;;","lte-302",199.853,1428.01,-90,Top,SMT

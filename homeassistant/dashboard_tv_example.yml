@@ -1,0 +1,495 @@
+type: sections
+max_columns: 4
+title: TV_REMOTE
+path: tv-remote
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading: TV
+        heading_style: title
+      - square: false
+        type: grid
+        cards:
+          - type: custom:mushroom-template-card
+            icon: mdi:power-standby
+            icon_color: red
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_power
+              target: {}
+            primary: Power
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: ""
+            multiline_secondary: false
+            layout: vertical
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:exit-to-app
+            icon_color: null
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_source
+              target: {}
+            layout: vertical
+            fill_container: true
+            primary: Source
+            badge_icon: ""
+            multiline_secondary: false
+      - square: false
+        type: grid
+        cards:
+          - type: custom:mushroom-template-card
+            icon: mdi:netflix
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_app_netflix
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Netflix
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: null
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_app_disney
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Disney
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: null
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_app_prime
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Prime
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: null
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_app_wow
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Wow
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:youtube
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_app_youtube
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Youtube
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:heart-outline
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_app_favorite
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+      - square: false
+        type: grid
+        cards:
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-up
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_channel_up
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            secondary: Channel Up
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-up
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_volume_up
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Volume Up
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-down
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_channel_down
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Channel Down
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-down
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_volume_down
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Volume Down
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+        columns: 3
+      - square: true
+        type: grid
+        cards:
+          - type: custom:mushroom-template-card
+            icon: mdi:closed-caption
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_subtitle
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: null
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-up
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_up
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: null
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:volume-mute
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_mute
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: null
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-left
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_left
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: null
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_ok
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            icon: mdi:check
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-right
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_right
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: null
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:arrow-down
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_down
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: null
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:menu
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_menu
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+        grid_options:
+          rows: auto
+          columns: 12
+        columns: 5
+      - square: false
+        type: grid
+        cards:
+          - type: custom:mushroom-template-card
+            icon: mdi:keyboard-return
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_back
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Return
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:home
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_home
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Home
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:close
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_exit
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: Exit
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+      - square: false
+        type: grid
+        cards:
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-1
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_1
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-2
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_2
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-3
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_3
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            secondary: null
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-4
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_4
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-5
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_5
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-6
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_6
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-7
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_7
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-8
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_8
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-9
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_9
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+          - type: custom:mushroom-template-card
+            icon: mdi:numeric-0
+            tap_action:
+              action: perform-action
+              perform_action: script.tv_no_0
+              target: {}
+            badge_icon: ""
+            badge_color: ""
+            fill_container: true
+            multiline_secondary: false
+            layout: vertical
+            icon_color: ""
+            primary: ""
+          - type: custom:mushroom-empty-card
+icon: mdi:remote
+subview: true
+cards: []
