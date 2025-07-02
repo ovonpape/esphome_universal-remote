@@ -42,8 +42,11 @@ The images below serve as wiring references, and the included Fritzing file can 
 Note: These wiring diagrams omit the IR receiver itself and instead show a 3-pin header, which is intended for connecting the receiver module when capturing commands from an existing remote.  
 In this configuration the board can either be powered via USB, a 5V DC connection to the 2-Pin header (red wire = 5v, blue wire = GND) or a 3.3V DC connection to the 3-Pin header (orange wire = 3.3v, blue wire = GND). 
 
-![perfboard](hardware/fritzing/images/perfboard.png)  
-![schematics](hardware/fritzing/images/schematics.png)
+<p float="left">
+  <img src="hardware/fritzing/images/perfboard.png" alt="Perfboard" width="45%" />
+  <img src="hardware/fritzing/images/schematics.png" alt="Schematics" width="47.2%" />
+</p>
+
 
 ### Custom PCB
 
@@ -67,7 +70,9 @@ The case is available in the following formats:
 - [STEP - stp](hardware/case/stp)
 
 ### Pictures
-![case_frontleft](hardware/case/images/case_frontleft.jpg)
-![case_backright](hardware/case/images/case_backright.jpg)
-![case_topdown_closed](hardware/case/images/case_topdown_closed.jpg)
-![case_topdown_open](hardware/case/images/case_topdown_open.jpg)
+<p float="left">
+  <img src="hardware/case/images/case_frontleft.jpg" alt="case_frontleft" width="45%" />
+  <img src="hardware/case/images/case_backright.jpg" alt="case_backright" width="45%" />
+  <img src="hardware/case/images/case_topdown_closed.jpg" alt="case_topdown_closed" width="45%" />
+  <img src="hardware/case/images/case_topdown_open.jpg" alt="case_topdown_open" width="45%" />
+</p>
