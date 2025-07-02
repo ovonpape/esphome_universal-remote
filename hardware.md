@@ -1,4 +1,4 @@
-# ESPHome Universal Remote – Hardware
+# HassBeam – Hardware
 
 ## Contents
 
