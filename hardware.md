@@ -42,14 +42,15 @@ The images below serve as wiring references, and the included Fritzing file can 
 Note: These wiring diagrams omit the IR receiver itself and instead show a 3-pin header, which is intended for connecting the receiver module when capturing commands from an existing remote.  
 In this configuration the board can either be powered via USB, a 5V DC connection to the 2-Pin header (red wire = 5v, blue wire = GND) or a 3.3V DC connection to the 3-Pin header (orange wire = 3.3v, blue wire = GND). 
 
-![perfboard](hardware\fritzing\images\perfboard.png)  
-![schematics](hardware\fritzing\images\schematics.png)
+![perfboard](hardware/fritzing/images/perfboard.png)  
+![schematics](hardware/fritzing/images/schematics.png)
 
 ### Custom PCB
 
-A [PCB design is provided](hardware/PCB) with Gerber files ready for fabrication. The 2-layer layout is simple and affordable to order.
+A [PCB design is provided](hardware/PCB) with Gerber files ready for fabrication. The 2-layer layout is simple and affordable to order. 
+The provided board was not tested yet, so you should double check before ordering it at your preferred PCB manufacturer.
 
-![pcb](hardware\fritzing\images\pcb.png)
+![pcb](hardware/fritzing/images/pcb.png)
 
 ---
 
