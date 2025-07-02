@@ -1,4 +1,4 @@
-# ESPHome Universal Remote
+# HassBeam
 An easy to build and use universal remote that can be integrated into Home Assistant using ESPHome.
 
 <p float="left">
