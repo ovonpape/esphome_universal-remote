@@ -13,7 +13,7 @@
 To build the ESPHome Universal Remote, you’ll need:
 
 - **Resistor**  
-  Limits current through the IR LED. In this build: two 22 Ω resistors in parallel (≈11 Ω). Choose a value based on your LED’s specs.
+  Limits current through the IR LED. In this build: two 22 Ω resistors in parallel (≈11 Ω). Note that LEDs can handle more current than their rating for short periods of time (as used in this project). This will result in a better signal, but might shorten the lifespan of your LED. Choose a value based on your LED’s specs. 
 
 - **IR LED**  
   Emits the infrared signals. Use a 940 nm LED for best compatibility. Narrow beam for focused control, wide for room coverage.
