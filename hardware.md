@@ -13,7 +13,7 @@
 To build the ESPHome Universal Remote, you’ll need:
 
 - **Resistor**  
-  Limits current through the IR LED. In this build: two 22 Ω resistors in parallel (≈11 Ω). Note that LEDs can handle more current than their rating for short periods of time (as used in this project). This will result in a better signal, but might shorten the lifespan of your LED. Choose a value based on your LED’s specs. 
+  Limits current through the IR LED. In this build: two 22 Ω resistors in parallel (≈11 Ω). Choose a value based on your LED’s specs.
 
 - **IR LED**  
   Emits the infrared signals. Use a 940 nm LED for best compatibility. Narrow beam for focused control, wide for room coverage.
@@ -36,19 +36,20 @@ To build the ESPHome Universal Remote, you’ll need:
 
 ### Breadboard / Perfboard
 
-The circuit can be assembled on a breadboard for prototyping. For a more permanent installation, you can solder the components onto a perfboard or use a custom PCB.
-The images below serve as wiring references, and the included Fritzing file can be viewed or edited as needed.
-Note: These wiring diagrams omit the IR receiver itself and instead show a 3-pin header, which is intended for connecting the receiver module when capturing commands from an existing remote.
-Additionally, a 2-pin header is included to optionally connect a battery or external power supply. This is not required, as the ESP32 used in this setup can also be powered via USB.
+The circuit can be assembled on a breadboard for prototyping. For a more permanent installation, you can solder the components onto a perfboard or use a custom PCB.  
+The images below serve as wiring references, and the included Fritzing file can be viewed or edited as needed.  
 
-![perfboard](hardware/fritzing/images/perfboard.png)  
-![schematics](hardware/fritzing/images/schematics.png)
+Note: These wiring diagrams omit the IR receiver itself and instead show a 3-pin header, which is intended for connecting the receiver module when capturing commands from an existing remote.  
+In this configuration the board can either be powered via USB, a 5V DC connection to the 2-Pin header (red wire = 5v, blue wire = GND) or a 3.3V DC connection to the 3-Pin header (orange wire = 3.3v, blue wire = GND). 
+
+![perfboard](hardware\fritzing\images\perfboard.png)  
+![schematics](hardware\fritzing\images\schematics.png)
 
 ### Custom PCB
 
 A [PCB design is provided](hardware/PCB) with Gerber files ready for fabrication. The 2-layer layout is simple and affordable to order.
 
-![pcb](hardware/fritzing/images/pcb.png)
+![pcb](hardware\fritzing\images\pcb.png)
 
 ---
 
