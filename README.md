@@ -1,5 +1,6 @@
 # ESPHome Universal Remote
 A universal remote that can be integrated into Home Assistant using ESPHome.
+![case_frontleft](hardware/case/images/case_frontleft.jpg)
 
 ## Contents
 - [Requirements](#requirements)
