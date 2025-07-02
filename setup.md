@@ -1,4 +1,4 @@
-# ESPHome Universal Remote – Setup
+# HassBeam – Setup
 
 ## Contents
 - [Installation](#installation)
@@ -85,5 +85,5 @@ Example dashboard configurations are provided:
 
 These can be imported or used as templates for your own setup.
 
-![Dashboard Example](homeassistant\dashboard_example.png)
+![Dashboard Example](homeassistant/dashboard_example.png)
 ---
