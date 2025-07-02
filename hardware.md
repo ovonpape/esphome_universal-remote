@@ -41,14 +41,14 @@ The images below serve as wiring references, and the included Fritzing file can 
 Note: These wiring diagrams omit the IR receiver itself and instead show a 3-pin header, which is intended for connecting the receiver module when capturing commands from an existing remote.
 Additionally, a 2-pin header is included to optionally connect a battery or external power supply. This is not required, as the ESP32 used in this setup can also be powered via USB.
 
-![perfboard](hardware\fritzing\images\perfboard.png)  
-![schematics](hardware\fritzing\images\schematics.png)
+![perfboard](hardware/fritzing/images/perfboard.png)  
+![schematics](hardware/fritzing/images/schematics.png)
 
 ### Custom PCB
 
 A [PCB design is provided](hardware/PCB) with Gerber files ready for fabrication. The 2-layer layout is simple and affordable to order.
 
-![pcb](hardware\fritzing\images\pcb.png)
+![pcb](hardware/fritzing/images/pcb.png)
 
 ---
 
