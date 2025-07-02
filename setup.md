@@ -23,7 +23,7 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 #### ESPHome CLI (recommended)
 - connect the device via USB (if wifi is already configured you can also use OTA instead of USB)
 - open a terminal in the esphome folder 
-- run ` esphome run .\universalremote.yaml`
+- run `esphome run .\universalremote.yaml`
 - select the proper device
 - The code should now be compiled and flashed to the device 
 
@@ -43,19 +43,19 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 After flashing and starting the device, open the ESPHome logs:
 #### ESPHome CLI
 - open a terminal in the esphome folder 
-- run ` esphome logs .\universalremote.yaml`
+- run `esphome logs .\universalremote.yaml`
 - if you are on the same network as the esp, select Over The Air (OTA), otherwise connect the device via USB and select the proper device
 - you should now be able to see the logs of your device
 
 #### ESPHome Dashboard
 
-- If you are using the ESPHome Dashboard, your device should be listed in the dashvboard and you just have to click 'logs'
+- If you are using the ESPHome Dashboard, your device should be listed in the dashboard and you just have to click 'logs'
 
 
 
 ### Capturing IR-Commands
 - Point the remote at the sensor and press the button you want to capture
-- The recieved command should appear in the logs
+- The received command should appear in the logs
 - Copy the command data of the desired buttons — these will be used later in Home Assistant to replicate the remote’s functionality.
 
 <br>
