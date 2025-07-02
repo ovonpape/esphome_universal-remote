@@ -41,22 +41,31 @@ The images below serve as wiring references, and the included Fritzing file can 
 Note: These wiring diagrams omit the IR receiver itself and instead show a 3-pin header, which is intended for connecting the receiver module when capturing commands from an existing remote.
 Additionally, a 2-pin header is included to optionally connect a battery or external power supply. This is not required, as the ESP32 used in this setup can also be powered via USB.
 
-![perfboard](perfboard.png)  
-![schematics](schematics.png)
+![perfboard](hardware\fritzing\images\perfboard.png)  
+![schematics](hardware\fritzing\images\schematics.png)
 
 ### Custom PCB
 
 A [PCB design is provided](hardware/PCB) with Gerber files ready for fabrication. The 2-layer layout is simple and affordable to order.
 
-![pcb](pcb.png)
+![pcb](hardware\fritzing\images\pcb.png)
 
 ---
 
 ## Case
 
 A 3D-printable case is available to protect and mount the remote. It’s optional but recommended for permanent or visible installations.
+This case is intended for the use of an ESP32 development board and a 4 x 6 cm (in this case 14 x 20 holes) perf board.
+You could reduce the size fo the case if you use an ESP without USB and a smaller perfboard.
 
+### Download 
 The case is available in the following formats:
 - [Fusion 360 - f3d](hardware/case/f3d)
 - [Object File - obj](hardware/case/obj)
 - [STEP - stp](hardware/case/stp)
+
+### Pictures
+![case_frontleft](hardware/case/images/case_frontleft.jpg)
+![case_backright](hardware/case/images/case_backright.jpg)
+![case_topdown_closed](hardware/case/images/case_topdown_closed.jpg)
+![case_topdown_open](hardware/case/images/case_topdown_open.jpg)
