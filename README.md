@@ -1,5 +1,6 @@
 # HassBeam
-An easy to build and use universal remote that can be integrated into Home Assistant using ESPHome.
+A cheap and easy to use universal remote that can be integrated into Home Assistant using ESPHome.  
+It allows you to replace your pile of different remote controls with one stationary device that can be controlled via Home Assistant. Of course, you can also automate the control of your IR devices.
 
 <p float="left">
   <img src="hardware/case/images/case_frontleft.jpg" alt="case_frontleft" width="50%" />
