@@ -2,8 +2,8 @@
 An easy to build and use universal remote that can be integrated into Home Assistant using ESPHome.
 
 <p float="left">
-  <img src="hardware/case/images/case_frontleft.jpg" alt="case_frontleft" width="40%" />
-  <img src="homeassistant/dashboard_example.png" alt="Dashboard Example" width="34.02%" />
+  <img src="hardware/case/images/case_frontleft.jpg" alt="case_frontleft" width="50%" />
+  <img src="homeassistant/dashboard_example.png" alt="Dashboard Example" width="42.5%" />
 </p>
 
 
