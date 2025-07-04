@@ -1,7 +1,7 @@
 #TV IR commands
 tv_ok:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0157 00AA 0017 0015 0017 0015 0017 0015 0017 0015
@@ -14,7 +14,7 @@ tv_ok:
   description: ''
 tv_source:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0015 0017 0015 0016 0015
@@ -27,7 +27,7 @@ tv_source:
   description: ''
 tv_menu:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0016 0015 0017 0015 0017 0015 0017 0014
@@ -39,7 +39,7 @@ tv_menu:
   description: ''
 tv_power:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AA 0018 0015 0017 0015 0017 0015 0017 0015
@@ -52,7 +52,7 @@ tv_power:
   description: ''
 tv_left:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0015 0017 0015 0016 0016
@@ -65,7 +65,7 @@ tv_left:
   description: ''
 tv_up:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0156 00AB 0016 0016 0016 0016 0016 0016 0016 0016
@@ -78,7 +78,7 @@ tv_up:
   description: ''
 tv_right:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0015 0016 0016 0017 0015
@@ -91,7 +91,7 @@ tv_right:
   description: ''
 tv_exit:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0014 0017 0015 0017 0014 0017 0015
@@ -104,7 +104,7 @@ tv_exit:
   description: ''
 tv_channel_up:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: '0000 006D 0022 0000 0158 00AA 0018 0015 0017 0014 0017 0015 0017 0015
@@ -116,7 +116,7 @@ tv_channel_up:
   description: ''
 tv_channel_down:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AA 0018 0015 0017 0015 0017 0015 0017 0015
@@ -129,7 +129,7 @@ tv_channel_down:
   description: ''
 tv_volume_up:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0014 0017 0015 0017 0014
@@ -142,7 +142,7 @@ tv_volume_up:
   description: ''
 tv_no_3:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AA 0018 0013 0018 0013 0018 0013 0018 0013
@@ -154,7 +154,7 @@ tv_no_3:
   description: ''
 tv_no_5:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AA 0018 0015 0017 0015 0017 0014 0017 0015
@@ -167,7 +167,7 @@ tv_no_5:
   description: ''
 tv_no_6:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AA 0018 0014 0018 0014 0017 0015 0018 0014
@@ -180,7 +180,7 @@ tv_no_6:
   description: ''
 tv_no_7:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0018 0013 0017 0014 0018 0013 0017 0014
@@ -193,7 +193,7 @@ tv_no_7:
   description: ''
 tv_no_8:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AA 0017 0015 0017 0015 0018 0014 0017 0015
@@ -205,7 +205,7 @@ tv_no_8:
   description: ''
 tv_no_9:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0014 0017 0014 0017 0014 0017 0015
@@ -218,7 +218,7 @@ tv_no_9:
   description: ''
 tv_no_0:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AA 0017 0015 0018 0014 0018 0014 0018 0014
@@ -231,7 +231,7 @@ tv_no_0:
   description: ''
 tv_no_1:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0157 00AC 0017 0015 0016 0016 0016 0015 0017 0015
@@ -244,7 +244,7 @@ tv_no_1:
   description: ''
 tv_no_2:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AB 0017 0015 0017 0015 0017 0015 0017 0015
@@ -257,7 +257,7 @@ tv_no_2:
   description: ''
 tv_no_4:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AA 0017 0014 0017 0014 0017 0014 0017 0014
@@ -270,7 +270,7 @@ tv_no_4:
   description: ''
 tv_down:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0015 0016 0015 0017 0014
@@ -283,7 +283,7 @@ tv_down:
   description: ''
 tv_home:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0015 0017 0015 0017 0015
@@ -296,7 +296,7 @@ tv_home:
   description: ''
 tv_subtitle:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AA 0017 0014 0018 0013 0018 0013 0018 0013
@@ -309,7 +309,7 @@ tv_subtitle:
   description: ''
 tv_back:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AA 0018 0015 0017 0015 0017 0014 0017 0015
@@ -322,7 +322,7 @@ tv_back:
   description: ''
 tv_mute:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0015 0017 0015 0017 0015
@@ -335,7 +335,7 @@ tv_mute:
   description: ''
 tv_volume_down:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0158 00AB 0017 0015 0017 0015 0017 0015 0017 0015
@@ -348,7 +348,7 @@ tv_volume_down:
   description: ''
   tv_app_netflix:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AA 0017 0014 0018 0013 0018 0013 0018 0013
@@ -361,7 +361,7 @@ tv_volume_down:
   description: ''
 tv_app_disney:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AA 0018 0013 0017 0014 0018 0013 0018 0013
@@ -374,7 +374,7 @@ tv_app_disney:
   description: ''
 tv_app_prime:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0022 0000 015A 00AA 0017 0014 0018 0013 0018 0013 0018 0013
@@ -387,7 +387,7 @@ tv_app_prime:
   description: ''
 tv_app_wow:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0022 0000 0159 00AA 0018 0013 0017 0014 0018 0013 0018 0013
@@ -400,7 +400,7 @@ tv_app_wow:
   description: ''
 tv_app_youtube:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0022 0000 0159 00AA 0018 0013 0018 0013 0018 0013 0017 0014
@@ -413,7 +413,7 @@ tv_app_youtube:
   description: ''
 tv_app_favorite:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0022 0000 0159 00AB 0018 0013 0017 0014 0018 0013 0018 0013
@@ -428,7 +428,7 @@ tv_app_favorite:
 #AVR IR commands
 avr_on:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0080 0042 0012 000F 0011 0010 0011 002F 0012 0010
@@ -442,7 +442,7 @@ avr_on:
   description: ''
 avr_standby:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 007F 0043 0012 0010 0011 0010 0011 0030 0011 0010
@@ -456,7 +456,7 @@ avr_standby:
   description: ''
 avr_channel_tv:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0081 0041 0011 000F 0011 000F 0011 002F 0011 000F
@@ -470,7 +470,7 @@ avr_channel_tv:
   description: ''
 avr_channel_game1:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0081 0041 0012 000F 0011 0010 0012 002F 0012 000F
@@ -484,7 +484,7 @@ avr_channel_game1:
   description: ''
 avr_channel_game2:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0080 0042 0011 000F 0012 000E 0012 002F 0012 000E
@@ -498,7 +498,7 @@ avr_channel_game2:
   description: ''
 avr_menu:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0081 0041 0012 000E 0012 000E 0012 002E 0012 000E
@@ -512,7 +512,7 @@ avr_menu:
   description: ''
 avr_return:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0018 0000 0081 0080 0021 0061 0020 0062 0020 0021 0020 0062
@@ -523,7 +523,7 @@ avr_return:
   description: ''
 avr_chlevel:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0018 0000 0081 0080 0021 0061 0021 0061 0021 0020 0021 0061
@@ -534,7 +534,7 @@ avr_chlevel:
   description: ''
 avr_left:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0080 0042 0012 000F 0011 000F 0012 002F 0012 000F
@@ -548,7 +548,7 @@ avr_left:
   description: ''
 avr_up:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0012 000E 0012 000E 0012 002F 0012 000E
@@ -562,7 +562,7 @@ avr_up:
   description: ''
 avr_right:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0080 0042 0011 000F 0012 000F 0011 0030 0012 000E
@@ -576,7 +576,7 @@ avr_right:
   description: ''
 avr_down:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0081 0041 0012 000E 0012 000E 0012 002E 0012 000E
@@ -590,7 +590,7 @@ avr_down:
   description: ''
 avr_enter:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0080 0042 0011 000F 0012 000E 0012 002F 0012 000E
@@ -604,7 +604,7 @@ avr_enter:
   description: ''
 avr_channel_netusb:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0011 0010 0011 0010 0011 0030 0011 0010
@@ -618,7 +618,7 @@ avr_channel_netusb:
   description: ''
 avr_channel_up:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0010 0010 0010 0011 0010 0031 0011 0010
@@ -632,7 +632,7 @@ avr_channel_up:
   description: ''
 avr_channel_down:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0010 0011 0011 0010 0010 0031 0011 0010
@@ -646,7 +646,7 @@ avr_channel_down:
   description: ''
 avr_mute:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0081 0041 0011 000F 0012 000E 0011 002F 0011 000F
@@ -656,7 +656,7 @@ avr_mute:
         000E 0013 000E 0012 000E 0012 002F 0012 000E 0012 000E 0012 002F 0012 002E
         0012 002F 0012 000E 0011 002F 0012 000E 0012 000E 0012 000E 0012 000E 0012
         002E 0011 0030 0012 000E 0012 002F 0012 002E 0012 002E 0012 000E 0012 03C2
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0081 0041 0012 000E 0012 000E 0012 002E 0012 000E
@@ -670,7 +670,7 @@ avr_mute:
   description: ''
 avr_volume_up:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0011 0010 0011 0010 0011 0030 0010 0010
@@ -684,7 +684,7 @@ avr_volume_up:
   description: ''
 avr_volume_down:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0011 0010 0011 0010 0011 0030 0011 0010
@@ -698,7 +698,7 @@ avr_volume_down:
   description: ''
 avr_eq_movie:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: 0000 006D 0032 0000 0080 0042 0011 0010 0010 0010 0010 0030 0011 0010
@@ -712,7 +712,7 @@ avr_eq_movie:
   description: ''
 avr_eq_music:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0010 0011 0010 0010 0010 0031 0010 0010
@@ -726,7 +726,7 @@ avr_eq_music:
   description: ''
 avr_eq_game:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0011 0010 0011 0010 0010 0030 0010 0011
@@ -740,7 +740,7 @@ avr_eq_game:
   description: ''
 avr_eq_direct:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0011 0010 0010 0011 0010 0030 0010 0011
@@ -754,7 +754,7 @@ avr_eq_direct:
   description: ''
 avr_sleep:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0080 0042 0011 0010 0010 0011 0011 0030 0011 0010
@@ -768,7 +768,7 @@ avr_sleep:
   description: ''
 avr_sourceselect:
   sequence:
-  - action: esphome.universalremote_send_ir_pronto
+  - action: esphome.hassbeam_send_ir_pronto
     metadata: {}
     data:
       data: ' 0000 006D 0032 0000 0081 0041 0012 000E 0012 000E 0012 002F 0012 000E

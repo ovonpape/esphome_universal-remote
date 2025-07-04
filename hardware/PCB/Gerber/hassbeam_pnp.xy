@@ -1,0 +1,23 @@
+# Pick And Place List
+# Company=
+# Author=
+# eMail=
+#
+# Project=hassbeam
+# Date=00:14:43
+# CreatedBy=Fritzing 1.0.2b.2023-12-20.1.0.2
+#
+#
+# Coordinates in mils, always center of component
+# Origin 0/0=Lower left corner of PCB
+# Rotation in degree (0-360, math. pos.)
+#
+RefDes,Description,Package,X,Y,Rotation,Side,Mount
+Description: resistance;capacitance;inductance;voltage;current;power;mpn;mn;
+R1,"11;;;;;;;;","0805 [SMD]",238.292,1795.98,90,Top,SMT
+sensor,";;;;;;;;","THT",238.293,736.331,0,Top,THT
+power,";;;;;;;;","THT",238.293,186.331,0,Top,THT
+Q1,";;;;;;;;","TO92 [THT]",134.793,1143.83,90,Top,THT
+U1,";;;;;;;;","",887.468,1035.31,90,Top,MANUAL
+R2,"1k;;;;;;;;","0805 [SMD]",138.292,1795.98,-90,Top,SMT
+D1,";;;;;;;;","lte-302",253.293,1486.33,-90,Top,SMT

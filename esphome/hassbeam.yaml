@@ -1,0 +1,73 @@
+esphome:
+  name: hassbeam
+
+esp32:
+  board: esp32dev
+
+logger:
+
+api:
+  services:
+    - service: send_ir_pronto
+      variables:
+        data: string
+      then:
+        - remote_transmitter.transmit_pronto:
+            data: !lambda |-
+              return data.c_str();
+
+    - service: send_ir_raw
+      variables:
+        data: string
+        freq: int
+      then:
+        - remote_transmitter.transmit_raw:
+            code: !lambda |-
+              std::vector<int> out;
+              return out;
+            carrier_frequency: !lambda "return freq;"
+
+    - service: send_ir_nec
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_nec:
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+
+    - service: send_ir_jvc
+      variables:
+        data: int
+      then:
+        - remote_transmitter.transmit_jvc:
+            data: !lambda "return data;"
+
+    - service: send_ir_lg
+      variables:
+        data: int
+      then:
+        - remote_transmitter.transmit_lg:
+            data: !lambda "return data;"
+            nbits: 32
+
+remote_receiver:
+  pin:
+    number: GPIO14
+    inverted: true
+    mode: INPUT_PULLUP
+  dump: all
+  idle: 25ms
+  buffer_size: 2kb
+
+remote_transmitter:
+  pin: GPIO27
+  carrier_duty_percent: 50%
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  ap:
+    ssid: !secret fallback_ssid
+    password: !secret fallback_password
