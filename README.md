@@ -11,7 +11,7 @@ It allows you to replace your pile of different remote controls with one station
 
 
 ## Requirements
-To use this project, you will need a working [Home Assistant](https://www.home-assistant.io/) instance, as the universal remote integrates directly with it. The core of the device is an ESP32 microcontroller, which communicates with Home Assistant via [ESPHome](https://esphome.io/).
+To use this project, you will need a working [Home Assistant](https://www.home-assistant.io/) instance, as the universal remote integrates directly with it. The core of the device is an ESP32 micro controller, which communicates with Home Assistant via [ESPHome](https://esphome.io/).
 
 In addition to the ESP32, a few electronic components are required — see the [Parts](hardware.md#parts) section for details. 
 
