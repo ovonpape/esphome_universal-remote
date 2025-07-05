@@ -17,6 +17,7 @@ In addition to the ESP32, a few electronic components are required — see the [
 
 Optionally, design files for a custom PCB or perfboard layout are provided, along with a 3D-printable case for the device.
 
+<br>
 
 ## 🚀 Getting Started
 
@@ -30,7 +31,7 @@ Read the [Hardware Guide](hardware.md) for instructions on what you need and how
 
 Once your hardware is ready, read the [Setup Guide](setup.md) to learn how to install and use the project.
 
-<br>
+
 <br>
 
 ## 💬 Community & Support
@@ -46,8 +47,7 @@ You can use the thread to:
 We’d love to hear your feedback and see what you build!
 
 <br> 
-
-
+<br>
 <br>
 
 ## 🔗 Related Projects
