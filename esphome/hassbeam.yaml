@@ -8,32 +8,24 @@ logger:
 
 api:
   services:
-    - service: send_ir_pronto
-      variables:
-        data: string
-      then:
-        - remote_transmitter.transmit_pronto:
-            data: !lambda |-
-              return data.c_str();
-
-    - service: send_ir_raw
-      variables:
-        data: string
-        freq: int
-      then:
-        - remote_transmitter.transmit_raw:
-            code: !lambda |-
-              std::vector<int> out;
-              return out;
-            carrier_frequency: !lambda "return freq;"
-
-    - service: send_ir_nec
+    - service: send_ir_aeha
       variables:
         address: int
+        data: int[]
+        carrier_frequency: float
+      then:
+        - remote_transmitter.transmit_aeha:
+            address: !lambda "return address;"
+            data: !lambda "return std::vector<unsigned char>(data.begin(), data.end());"
+            carrier_frequency: !lambda "return carrier_frequency;"
+
+    - service: send_ir_beo4
+      variables:
+        source: int
         command: int
       then:
-        - remote_transmitter.transmit_nec:
-            address: !lambda "return address;"
+        - remote_transmitter.transmit_beo4:
+            source: !lambda "return source;"
             command: !lambda "return command;"
 
     - service: send_ir_jvc
@@ -43,13 +35,148 @@ api:
         - remote_transmitter.transmit_jvc:
             data: !lambda "return data;"
 
+    - service: send_ir_haier
+      variables:
+        code: int[]
+      then:
+        - remote_transmitter.transmit_haier:
+            code: !lambda "return std::vector<unsigned char>(code.begin(), code.end());"
+
     - service: send_ir_lg
       variables:
         data: int
+        nbits: int #default=28
+
       then:
         - remote_transmitter.transmit_lg:
             data: !lambda "return data;"
-            nbits: 32
+            nbits: !lambda "return nbits;"
+
+    - service: send_ir_nec
+      variables:
+        address: int
+        command: int
+        command_repeats: int #default=1
+      then:
+        - remote_transmitter.transmit_nec:
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+            command_repeats: !lambda "return command_repeats;"
+
+    - service: send_ir_panasonic
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_panasonic:
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+
+    - service: send_ir_pioneer
+      variables:
+        rc_code_1: int
+        rc_code_2: int
+        repeat_times: int
+      then:
+        - remote_transmitter.transmit_pioneer:
+            rc_code_1: !lambda "return rc_code_1;"
+            rc_code_2: !lambda "return rc_code_2;"
+            repeat:
+              times: !lambda "return repeat_times;"
+
+    - service: send_ir_pioneer_simple
+      variables:
+        rc_code_1: int
+      then:
+        - remote_transmitter.transmit_pioneer:
+            rc_code_1: !lambda "return rc_code_1;"
+
+    - service: send_ir_pronto
+      variables:
+        data: string
+      then:
+        - remote_transmitter.transmit_pronto:
+            data: !lambda "return data.c_str();"
+
+    - service: send_ir_raw
+      variables:
+        data: string
+        freq: float # default 0, common 38000
+      then:
+        - remote_transmitter.transmit_raw:
+            code: !lambda |-
+              std::vector<int> out;
+              return out;
+            carrier_frequency: !lambda "return freq;"
+
+    - service: send_ir_rc5
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_rc5:
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+
+    - service: send_ir_rc6
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_rc6:
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+
+    - service: send_ir_roomba
+      variables:
+        data: int
+        repeat_times: int # default 3
+        wait_time_ms: int # default 17ms
+      then:
+        - remote_transmitter.transmit_roomba:
+            data: !lambda "return data;"
+            repeat:
+              times: !lambda "return repeat_times;"
+              wait_time: !lambda "return wait_time_ms;"
+
+    - service: send_ir_samsung
+      variables:
+        data: int
+        nbits: int # odefault 32
+      then:
+        - remote_transmitter.transmit_samsung:
+            data: !lambda "return data;"
+            nbits: !lambda "return nbits;"
+
+    - service: send_ir_samsung36
+      variables:
+        address: int
+        command: int
+      then:
+        - remote_transmitter.transmit_samsung36:
+            address: !lambda "return address;"
+            command: !lambda "return command;"
+
+    - service: send_sony
+      variables:
+        data: int
+        nbits: int # default = 12
+      then:
+        - remote_transmitter.transmit_sony:
+            data: !lambda "return data;"
+            nbits: !lambda "return nbits;"
+
+    - service: send_toshiba_ac
+      variables:
+        rc_code_1: int
+        rc_code_2: int #optional
+      then:
+        - remote_transmitter.transmit_toshiba_ac:
+            rc_code_1: !lambda "return rc_code_1;"
+            rc_code_2: !lambda "return rc_code_2;"
+
+ota:
+  platform: esphome
 
 remote_receiver:
   pin:

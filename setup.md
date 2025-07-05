@@ -38,8 +38,14 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 ---
 
 ## Capturing IR Commands
-*NOTE: if you decided to use a pin header instead of directly soldering the sensor to the board, you will now have to connect it using jumper wires*
+### Resources
+
+Many remote control Pronto codes can be found on remotecentral.com
+
+
+
 ### Accessing the logs
+*NOTE: if you decided to use a pin header instead of directly soldering the sensor to the board, you will now have to connect it using jumper wires*
 After flashing and starting the device, open the ESPHome logs:
 #### ESPHome CLI
 - open a terminal in the esphome folder 
@@ -52,7 +58,6 @@ After flashing and starting the device, open the ESPHome logs:
 - If you are using the ESPHome Dashboard, your device should be listed in the dashboard and you just have to click 'logs'
 
 
-
 ### Capturing IR-Commands
 - Point the remote at the sensor and press the button you want to capture
 - The received command should appear in the logs
@@ -62,6 +67,9 @@ After flashing and starting the device, open the ESPHome logs:
 <br>
 
 ---
+## Sending IR Commands
+*Detailed Instructions on how to use the provided services and which protocols are currently supported will be added to this guide soon. In the mean time you can find the current implementation [here](./esphome/hassbeam.yaml) and the documentation of the IR actions [here](https://esphome.io/components/remote_transmitter.html#)*
+
 
 ## Home Assistant Setup
 
@@ -69,8 +77,10 @@ Once the ESP device is connected to your network, it should automatically be dis
 
 ### Creating Scripts to Send IR Commands
 
+
+
 To send specific commands to your devices, you’ll need to define **scripts** in Home Assistant. Each script corresponds to a single button or action (e.g., "TV_Power", "AVR_Volume-Up").  
-A sample configuration can be found in [`homeassistant/scripts.yaml`](../homeassistant/scripts.yaml). Replace the command data with your captured IR codes or create new scripts.  
+A sample configuration can be found in [`homeassistant/scripts.yaml`](./homeassistant/scripts.yaml). Replace the command data with your captured IR codes or create new scripts.  
 you can add these scripts to homeassistant by editing the scripts.yaml file of your homeassistant instance, or by adding it in the UI.  
 
 *Since this part of the setup can be very tedious if you want to add a lot of buttons, a better integration into homeassistant is planned.*
