@@ -15,10 +15,11 @@
 
 ## Installation
 
-Clone or download this repository.
+Clone this repository or download the latest release.
 
-To install the the software on your ESP32, first make sure to configure your Wi-Fi credentials via a `secrets.yaml` file. A sample file is provided in the [esphome folder](esphome) and only needs to be adjusted with your local SSID and password.
-after that you can flash the provided configuration file `universalremote.yaml` using [ESPHome](https://esphome.io/).  
+To install the the software on your ESP32, first make sure to configure your Wi-Fi credentials.  
+A sample configuration is provided in the [esphome folder](esphome). You just need to rename the file `secrets_template.yaml` to `secrets.yaml` and adjust it with your local SSID and password.  
+After that you can flash the provided configuration file `hassbeam.yaml` using [ESPHome](https://esphome.io/).  
 
 While ESPHome can be used directly within Home Assistant, **compilation on limited hardware can be extremely slow**. It's recommended to install and use the ESPHome CLI on a PC for faster builds and flashing. You can find installation instructions in the [ESPHome Getting Started guide](https://esphome.io/guides/getting_started_command_line.html).
 
@@ -26,7 +27,7 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 
 - connect the device via USB (if wifi is already configured you can also use OTA instead of USB)
 - open a terminal in the esphome folder
-- run `esphome run .\universalremote.yaml`
+- run `esphome run .\hassbeam.yaml`
 - select the proper device
 - The code should now be compiled and flashed to the device
 
@@ -34,7 +35,7 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 
 - [Physically Connecting to your Device](https://esphome.io/guides/physical_device_connection#physically-connecting-to-your-device)
 - [Device Builder](https://esphome.io/guides/getting_started_hassio#device-builder-interface)
-- copy the code inside `universalremote.yaml` and flash it to the device
+- copy the code inside `hassbeam.yaml` and flash it to the device
 
 <br>
 <br>
@@ -55,7 +56,7 @@ After flashing and starting the device, open the ESPHome logs:
 #### ESPHome CLI
 
 - open a terminal in the esphome folder
-- run `esphome logs .\universalremote.yaml`
+- run `esphome logs .\hassbeam.yaml`
 - if you are on the same network as the esp, select Over The Air (OTA), otherwise connect the device via USB and select the proper device
 - you should now be able to see the logs of your device
 
