@@ -46,16 +46,16 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 
 **Many remote control Pronto codes can be found on remotecentral.com**
 
-Received IR commands will trigger a Home Assistant event. You can obtain the IR code by subscribing to the event `hassbeam.ir_code_received`:
+Received IR commands will trigger a Home Assistant event. You can obtain the IR code by subscribing to the event `esphome.hassbeam.ir_received`:
 - Open Home Assistant
 - go to Developer tools
 - Click on events
-- Paste the event id `esphome.ir_code_received` into the input field and subscribe to that event
+- Paste the event id `esphome.hassbeam.ir_received` into the input field and subscribe to that event
 - Point the remote at the sensor and press the button you want to capture
 - The received command should appear in the Home Assistant Events
 - Copy the command data of the desired buttons — these will be used later in Home Assistant to replicate the remote’s functionality.
 
-If the commands of a remote does not create an event, this could indicate that the protocol is not yet supported. You can find out which protocol is used by accessing the logs of your ESP32 and receiving the IR command.
+*If the commands of a remote does not create an event, this could indicate that the protocol is not yet supported. You can find out which protocol is used by accessing the logs of your ESP32 and receiving the IR command.*
 <br>
 <br>
 
