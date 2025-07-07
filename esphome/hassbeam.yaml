@@ -1,10 +1,34 @@
 esphome:
-  name: hassbeam
+  name: !secret device_name
 
 esp32:
   board: esp32dev
 
 logger:
+
+ota:
+  platform: esphome
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  ap:
+    ssid: !secret fallback_ssid
+    password: !secret fallback_password
+
+#Global Variables
+globals:
+  - id: device_name
+    type: std::string
+    initial_value: !secret device_name_str
+
+# Transmitter Configuration
+remote_transmitter:
+  pin: GPIO27
+  carrier_duty_percent: 50%
+
+# Api Configuration
 
 api:
   services:
@@ -18,7 +42,9 @@ api:
             address: !lambda "return address;"
             data: !lambda "return std::vector<unsigned char>(data.begin(), data.end());"
             carrier_frequency: !lambda "return carrier_frequency;"
-
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "AEHA"
     - service: send_ir_beo4
       variables:
         source: int
@@ -27,6 +53,9 @@ api:
         - remote_transmitter.transmit_beo4:
             source: !lambda "return source;"
             command: !lambda "return command;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Beo4"
 
     - service: send_ir_jvc
       variables:
@@ -34,6 +63,9 @@ api:
       then:
         - remote_transmitter.transmit_jvc:
             data: !lambda "return data;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "JVC"
 
     - service: send_ir_haier
       variables:
@@ -41,16 +73,21 @@ api:
       then:
         - remote_transmitter.transmit_haier:
             code: !lambda "return std::vector<unsigned char>(code.begin(), code.end());"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Haier"
 
     - service: send_ir_lg
       variables:
         data: int
         nbits: int #default=28
-
       then:
         - remote_transmitter.transmit_lg:
             data: !lambda "return data;"
             nbits: !lambda "return nbits;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "LG"
 
     - service: send_ir_nec
       variables:
@@ -62,6 +99,9 @@ api:
             address: !lambda "return address;"
             command: !lambda "return command;"
             command_repeats: !lambda "return command_repeats;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "NEC"
 
     - service: send_ir_panasonic
       variables:
@@ -71,6 +111,9 @@ api:
         - remote_transmitter.transmit_panasonic:
             address: !lambda "return address;"
             command: !lambda "return command;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Panasonic"
 
     - service: send_ir_pioneer
       variables:
@@ -83,6 +126,9 @@ api:
             rc_code_2: !lambda "return rc_code_2;"
             repeat:
               times: !lambda "return repeat_times;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Pioneer"
 
     - service: send_ir_pioneer_simple
       variables:
@@ -90,6 +136,9 @@ api:
       then:
         - remote_transmitter.transmit_pioneer:
             rc_code_1: !lambda "return rc_code_1;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Pioneer Simple"
 
     - service: send_ir_pronto
       variables:
@@ -97,6 +146,9 @@ api:
       then:
         - remote_transmitter.transmit_pronto:
             data: !lambda "return data.c_str();"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Pronto"
 
     - service: send_ir_raw
       variables:
@@ -108,6 +160,9 @@ api:
               std::vector<int> out;
               return out;
             carrier_frequency: !lambda "return freq;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Raw"
 
     - service: send_ir_rc5
       variables:
@@ -117,6 +172,9 @@ api:
         - remote_transmitter.transmit_rc5:
             address: !lambda "return address;"
             command: !lambda "return command;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "RC5"
 
     - service: send_ir_rc6
       variables:
@@ -126,6 +184,9 @@ api:
         - remote_transmitter.transmit_rc6:
             address: !lambda "return address;"
             command: !lambda "return command;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "RC6"
 
     - service: send_ir_roomba
       variables:
@@ -138,6 +199,9 @@ api:
             repeat:
               times: !lambda "return repeat_times;"
               wait_time: !lambda "return wait_time_ms;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Roomba"
 
     - service: send_ir_samsung
       variables:
@@ -147,6 +211,9 @@ api:
         - remote_transmitter.transmit_samsung:
             data: !lambda "return data;"
             nbits: !lambda "return nbits;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Samsung"
 
     - service: send_ir_samsung36
       variables:
@@ -156,6 +223,9 @@ api:
         - remote_transmitter.transmit_samsung36:
             address: !lambda "return address;"
             command: !lambda "return command;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Samsung36"
 
     - service: send_sony
       variables:
@@ -165,6 +235,9 @@ api:
         - remote_transmitter.transmit_sony:
             data: !lambda "return data;"
             nbits: !lambda "return nbits;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Sony"
 
     - service: send_toshiba_ac
       variables:
@@ -174,27 +247,278 @@ api:
         - remote_transmitter.transmit_toshiba_ac:
             rc_code_1: !lambda "return rc_code_1;"
             rc_code_2: !lambda "return rc_code_2;"
+        - script.execute:
+            id: update_protocol_sent
+            protocol: "Toshiba AC"
 
-ota:
-  platform: esphome
+# Remote Receiver Configuration
 
 remote_receiver:
   pin:
     number: GPIO14
     inverted: true
-    mode: INPUT_PULLUP
+    mode:
+      input: true
+      pullup: true
   dump: all
   idle: 25ms
   buffer_size: 2kb
 
-remote_transmitter:
-  pin: GPIO27
-  carrier_duty_percent: 50%
+  on_aeha:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "AEHA"
+          address: !lambda 'return "0x" + format_hex(x.address);'
+          data: !lambda |-
+            std::string str = "[ ";
+            for (auto value : x.data) {
+              str += std::to_string(value);
+              str += ", ";
+            }
+            str += "]";
+            return str;
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "AEHA"
 
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+  on_beo4:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Beo4"
+          source: !lambda 'return "0x" + format_hex(x.source);'
+          command: !lambda 'return "0x" + format_hex(x.command);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Beo4"
 
-  ap:
-    ssid: !secret fallback_ssid
-    password: !secret fallback_password
+  on_jvc:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "JVC"
+          data: !lambda 'return "0x" + format_hex(x.data);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "JVC"
+
+  on_haier:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Haier"
+          data: !lambda |-
+            std::string str = "[ ";
+            for (size_t i = 0; i < x.data.size(); i++) {
+              str += std::to_string(x.data[i]);
+              if (i < x.data.size() - 1) str += ", ";
+            }
+            str += " ]";
+            return str;
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Haier"
+
+  on_lg:
+    then:
+      - homeassistant.event:
+          event: esphome.hassbeam.ir_received
+          data:
+            protocol: "LG"
+            data: !lambda 'return "0x" + format_hex(x.data);'
+            nbits: !lambda "return x.nbits;"
+            device_name: device_name
+      - script.execute:
+          id: update_protocol_received
+          protocol: "LG"
+
+  on_nec:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "NEC"
+          address: !lambda 'return "0x" + format_hex(x.address);'
+          command: !lambda 'return "0x" + format_hex(x.command);'
+          command_repeats: !lambda "return x.command_repeats;"
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "NEC"
+
+  on_panasonic:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Panasonic"
+          address: !lambda 'return "0x" + format_hex(x.address);'
+          command: !lambda 'return "0x" + format_hex(x.command);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Panasonic"
+
+  on_pioneer:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Pioneer"
+          rc_code_1: !lambda 'return "0x" + format_hex(x.rc_code_1);'
+          rc_code_2: !lambda 'return "0x" + format_hex(x.rc_code_2);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Pioneer"
+
+  on_pronto:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Pronto"
+          data: !lambda "return x.data.c_str();"
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Pronto"
+
+  on_raw:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Raw"
+          data: !lambda |-
+            std::string str = "[ ";
+            for (size_t i = 0; i < x.size(); i++) {
+              str += std::to_string(x[i]);
+              if (i < x.size() - 1) str += ", ";
+            }
+            str += " ]";
+            return str;
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Raw"
+
+  on_rc5:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "RC5"
+          address: !lambda 'return "0x" + format_hex(x.address);'
+          command: !lambda 'return "0x" + format_hex(x.command);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "RC5"
+
+  on_rc6:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "RC6"
+          address: !lambda 'return "0x" + format_hex(x.address);'
+          command: !lambda 'return "0x" + format_hex(x.command);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "RC6"
+
+  on_roomba:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Roomba"
+          data: !lambda 'return "0x" + format_hex(x.data);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Roomba"
+
+  on_samsung:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Samsung"
+          data: !lambda 'return "0x" + format_hex(x.data);'
+          nbits: !lambda "return x.nbits;"
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Samsung"
+
+  on_samsung36:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Samsung36"
+          address: !lambda 'return "0x" + format_hex(x.address);'
+          command: !lambda 'return "0x" + format_hex(x.command);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Samsung36"
+
+  on_sony:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Sony"
+          data: !lambda 'return "0x" + format_hex(x.data);'
+          nbits: !lambda "return x.nbits;"
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Sony"
+
+  on_toshiba_ac:
+    - homeassistant.event:
+        event: esphome.hassbeam.ir_received
+        data:
+          protocol: "Toshiba AC"
+          rc_code_1: !lambda 'return "0x" + format_hex(x.rc_code_1);'
+          rc_code_2: !lambda 'return "0x" + format_hex(x.rc_code_2);'
+          device_name: device_name
+    - script.execute:
+        id: update_protocol_received
+        protocol: "Toshiba AC"
+
+#Script Configuration
+script:
+  - id: update_protocol_sent
+    parameters:
+      protocol: string
+    then:
+      - text_sensor.template.publish:
+          id: protocol_sent
+          state: !lambda "return protocol;"
+      - delay: 100ms
+      - text_sensor.template.publish:
+          id: protocol_sent
+          state: ""
+
+  - id: update_protocol_received
+    parameters:
+      protocol: string
+    then:
+      - text_sensor.template.publish:
+          id: protocol_received
+          state: !lambda "return protocol;"
+      - delay: 100ms
+      - text_sensor.template.publish:
+          id: protocol_received
+          state: ""
+
+#Sensor Configuration
+text_sensor:
+  - platform: template
+    name: "protocol sent"
+    id: protocol_sent
+    update_interval: never
+  - platform: template
+    name: "protocol received"
+    id: protocol_received
+    update_interval: never
