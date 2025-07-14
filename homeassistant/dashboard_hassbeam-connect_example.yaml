@@ -1,0 +1,46 @@
+views:
+  - type: panel
+    path: ''
+    cards:
+      - type: custom:hassbeam-setup-card
+    title: Setup
+  - type: panel
+    path: ''
+    cards:
+      - type: custom:hassbeam-manager-card
+    title: Manager
+  - type: sections
+    cards: []
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading: TV
+            heading_style: title
+          - square: false
+            type: grid
+            cards:
+              - type: custom:mushroom-template-card
+                icon: mdi:power-standby
+                icon_color: red
+                tap_action:
+                  action: perform-action
+                  perform_action: hassbeam_connect_backend.send_ir_code
+                  data:
+                    device: tv
+                    action: power
+                primary: Power
+                layout: vertical
+              - type: custom:mushroom-empty-card
+              - type: custom:mushroom-template-card
+                icon: mdi:exit-to-app
+                tap_action:
+                  action: perform-action
+                  perform_action: hassbeam_connect_backend.send_ir_code
+                  data:
+                    device: tv
+                    action: source
+                primary: Source
+                layout: vertical
+    max_columns: 1
+    title: Example

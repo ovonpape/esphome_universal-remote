@@ -42,25 +42,6 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 
 ---
 
-## Capturing IR Commands
-
-**Many remote control Pronto codes can be found on remotecentral.com**
-
-Received IR commands will trigger a Home Assistant event. You can obtain the IR code by subscribing to the event `esphome.hassbeam.ir_received`:
-- Open Home Assistant
-- go to Developer tools
-- Click on events
-- Paste the event id `esphome.hassbeam.ir_received` into the input field and subscribe to that event
-- Point the remote at the sensor and press the button you want to capture
-- The received command should appear in the Home Assistant Events
-- Copy the command data of the desired buttons — these will be used later in Home Assistant to replicate the remote’s functionality.
-
-*If the commands of a remote does not create an event, this could indicate that the protocol is not yet supported. You can find out which protocol is used by accessing the logs of your ESP32 and receiving the IR command.*
-<br>
-<br>
-
----
-
 ## Home Assistant Setup
 
 Once the ESP device is connected to your network, it should automatically be discovered by Home Assistant via ESPHome integration. If not, add it manually using its IP address (use the ESPHome integration).
@@ -68,62 +49,67 @@ Once the ESP device is connected to your network, it should automatically be dis
 <br>
 
 ---
+## Capturing IR Commands
+To make the setup process much faster and easier, you can use the HassBeam Connect Integration.
+### Install HassBeam Connect
+HassBeam Connect comes in two separate repos that contain the backend and frontend of the integration. You can install both manually but it is recommended to install them via [HACS](https://www.hacs.xyz/docs/use/download/download/)
+
+- open HACS and click on the settings in the top right corner
+- select custom repository
+- add these two repositories:
+  - Backend: `https://github.com/BasilBerg/hassbeam-connect-backend` Type: Integration 
+  - Lovelace Cards: `https://github.com/BasilBerg/hassbeam-connect-cards` Type: Dashboard
+- Search `HassBeam` in HACS and install `HassBeam Connect Backend` and `HassBeam Connect Cards`
+- Go to Devices & Services and add the `HassBeam Connect Backend``Integration
+- You can now add the `hassbeam-setup-card` and `hassbeam-manager-card` on any lovelace dashboard or use the [provided template dashboard](homeassistant/dashboard_hassbeam-connect_example.yaml)
+
+### Using HassBeamConnect to capture commands
+To capture IR commands you can use the `hassbeam-setup-card`.
+- click Start Listening
+- press the Button of the original remote
+- the captured command(s) should now appear in the list
+  - you can filter the list by protocol or leave this field empty to display all protocols
+  - pronto is selected by default since it is not protocol specific and should work for all common devices
+- Pick the command you want to save
+  - if you're not sure which one will work, you can click send to replay the command and check if the device reacts as expected
+  - click select on the command you want to save
+- enter the name of the device this command controls
+- enter the name of the action this command performs
+- click Save IR Code
+
+![Setup process](homeassistant/setup.gif)
+
+
+## Managing stored commands
+To capture IR commands you can use the `hassbeam-manager-card`. This card can display a list of all commands you have saved. you can filter them by target device or action and you can replay the command from within this list. You can also delete commands.
+![Setup process](homeassistant/manager.png)
+
 
 ## Sending IR Commands
+You can use the saved IR codes on your dashboard or inside scripts, automations etc. using the `hassbeam_connect_backend.send_ir_code` service.  
+This can either be done in the UI:
 
-### Supported Protocols
-The following protocols are currently supported:
+![UI Service call](homeassistant/service.png)
 
-| Protocol          | Service                   | Parameters                                                                            |
-|------------------ |-------------------------- |-------------------------------------------------------------------------------------- |
-| Ahea              | `send_ir_aeha`            | `address`: int<br>`data`: int[]                                                       |
-| Beo4              | `send_ir_beo4`            | `source`: int<br>`command`: int                                                       |
-| JVC               | `send_ir_jvc`             | `data`: int                                                                           |
-| Haier             | `send_ir_haier`           | `code`: int[]                                                                         |
-| LG                | `send_ir_lg`              | `data`: int<br>`nbits`: int #default=28                                               |
-| NEC               | `send_ir_nec`             | `address`: int<br>`command`: int<br>`command_repeats`: int #default=1                 |
-| Panasonic         | `send_ir_panasonic`       | `address`: int<br>`command`: int                                                      |
-| Pioneer           | `send_ir_pioneer`         | `rc_code_1`: int<br>`rc_code_2`: int<br>`repeat_times`: int                           |
-| Pioneer (simple)  | `send_ir_pioneer_simple`  | `rc_code_1`: int                                                                      |
-| Pronto            | `send_ir_pronto`          | `data`: string                                                                        |
-| Raw               | `send_ir_raw`             | `data`: string<br>`freq`: float                                                       |
-| RC5               | `send_ir_rc5`             | `address`: int<br>`command`: int                                                      |
-| RC6               | `send_ir_rc6`             | `address`: int<br>`command`: int                                                      |
-| Roomba            | `send_ir_roomba`          | `data`: int<br>`repeat_times`: int # default 3<br>`wait_time_ms`: int # default 17ms  |
-| Samsung           | `send_ir_samsung`         | `data`: int<br>`nbits`: int # default 32                                              |
-| Samsung36         | `send_ir_samsung36`       | `address`: int<br>`command`: int                                                      |
-| Sony              | `send_sony`               | `data`: int<br>`nbits`: int # default = 12                                            |
-| Toshiba AC        | `send_toshiba_ac`         | `rc_code_1`: int<br>`rc_code_2`: int #optional                                        |
+or in YAML:
 
-### Creating Scripts to Send IR Commands
-
-*Since this part of the setup can be a bit tedious if you want to add a lot of buttons, a better integration into Home Assistant is planned.*
-
-To send specific commands to your devices, you’ll need to define **scripts** in Home Assistant. Each script corresponds to a single button or action (e.g., "TV_Power", "AVR_Volume-Up").
-
-Here's an example how to use the `send_ir_pronto` service in a Home Assistant script to send an IR command:
 ```yaml
- sequence:
-  - action: esphome.hassbeam_send_ir_pronto
-    metadata: {}
-    data:
-      data: 0000 006D 0022 0000 0157 00AA 0017 0015 0017 0015 0017 0015 0017 0015
-        0017 0015 0017 0015 0017 0015 0017 0015 0017 003E 0017 003E 0017 003F 0016
-        003F 0017 003F 0017 003F 0016 0015 0017 003F 0017 003F 0017 0015 0017 003F
-        0017 0015 0017 003F 0016 0015 0016 0015 0016 0015 0016 0015 0016 003F 0016
-        0015 0016 003F 0016 0015 0017 003F 0016 003F 0016 003F 0016 03C2 0000 006D
-        0002 0000 0158 0056 0016 03C2
-  alias: TV_OK
-  description: 'Sends the IR command that corresponds with the OK-Button of the TVs remote'
-}
+action: hassbeam_connect_backend.send_ir_code
+data:
+  device: tv    #Device name you specified during setup
+  action: power #Action name you specified during setup
 ```
-This Example uses the Pronto Protocol but you can do this with the other supported protocols too. Make sure to use the [correct parameters](#supported-protocols) for the selected protocol. You can find more information and example parameters in the [ESPHome documentation](https://esphome.io/components/remote_transmitter.html#)
 
 
-</br>
 
-A sample configuration can be found in [`homeassistant/scripts.yaml`](./homeassistant/scripts.yaml). Replace the command data with your captured IR codes or create new scripts.  
-You can add these scripts to Home Assistant by editing the scripts.yaml file (this method requires a restart) of your Home Assistant instance, or by adding it in the UI. If you want to add multiple Scripts at once, I recommend editing the scripts.yaml file.  
+
+<br>
+<br>
+
+---
+
+
+
 
 
 ### Creating a Dashboard to Control Devices

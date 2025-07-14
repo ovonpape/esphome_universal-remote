@@ -7,6 +7,10 @@ It allows you to replace your pile of different remote controls with one station
   <img src="homeassistant/dashboard_example.png" alt="Dashboard Example" width="42.5%" />
 </p>
 
+#### With the new [HassBeam Connect integration](setup.md#using-hassbeamconnect-to-capture-commands), configuring your system is faster and simpler than ever:
+<p float="left">
+  <img src="homeassistant/setup.gif" alt="setup process" width="92.5%" />
+</p>
 
 
 

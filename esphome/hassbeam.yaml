@@ -1,8 +1,14 @@
 esphome:
   name: !secret device_name
+  libraries:
+    - "ArduinoJson"
 
 esp32:
   board: esp32dev
+
+# Substitutions for cleaner code
+substitutions:
+  device_name_sub: !secret device_name
 
 logger:
 
@@ -16,12 +22,6 @@ wifi:
   ap:
     ssid: !secret fallback_ssid
     password: !secret fallback_password
-
-#Global Variables
-globals:
-  - id: device_name
-    type: std::string
-    initial_value: !secret device_name_str
 
 # Transmitter Configuration
 remote_transmitter:
@@ -251,8 +251,6 @@ api:
             id: update_protocol_sent
             protocol: "Toshiba AC"
 
-# Remote Receiver Configuration
-
 remote_receiver:
   pin:
     number: GPIO14
@@ -268,6 +266,7 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "AEHA"
           address: !lambda 'return "0x" + format_hex(x.address);'
           data: !lambda |-
@@ -278,7 +277,7 @@ remote_receiver:
             }
             str += "]";
             return str;
-          device_name: device_name
+
     - script.execute:
         id: update_protocol_received
         protocol: "AEHA"
@@ -287,10 +286,11 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Beo4"
           source: !lambda 'return "0x" + format_hex(x.source);'
           command: !lambda 'return "0x" + format_hex(x.command);'
-          device_name: device_name
+
     - script.execute:
         id: update_protocol_received
         protocol: "Beo4"
@@ -299,9 +299,9 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "JVC"
           data: !lambda 'return "0x" + format_hex(x.data);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "JVC"
@@ -310,6 +310,7 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Haier"
           data: !lambda |-
             std::string str = "[ ";
@@ -319,7 +320,6 @@ remote_receiver:
             }
             str += " ]";
             return str;
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Haier"
@@ -329,10 +329,10 @@ remote_receiver:
       - homeassistant.event:
           event: esphome.hassbeam.ir_received
           data:
+            hassbeam_device: ${device_name_sub}
             protocol: "LG"
             data: !lambda 'return "0x" + format_hex(x.data);'
             nbits: !lambda "return x.nbits;"
-            device_name: device_name
       - script.execute:
           id: update_protocol_received
           protocol: "LG"
@@ -341,11 +341,11 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "NEC"
           address: !lambda 'return "0x" + format_hex(x.address);'
           command: !lambda 'return "0x" + format_hex(x.command);'
           command_repeats: !lambda "return x.command_repeats;"
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "NEC"
@@ -354,10 +354,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Panasonic"
           address: !lambda 'return "0x" + format_hex(x.address);'
           command: !lambda 'return "0x" + format_hex(x.command);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Panasonic"
@@ -366,10 +366,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Pioneer"
           rc_code_1: !lambda 'return "0x" + format_hex(x.rc_code_1);'
           rc_code_2: !lambda 'return "0x" + format_hex(x.rc_code_2);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Pioneer"
@@ -378,9 +378,9 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Pronto"
           data: !lambda "return x.data.c_str();"
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Pronto"
@@ -389,6 +389,7 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Raw"
           data: !lambda |-
             std::string str = "[ ";
@@ -398,7 +399,6 @@ remote_receiver:
             }
             str += " ]";
             return str;
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Raw"
@@ -407,10 +407,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "RC5"
           address: !lambda 'return "0x" + format_hex(x.address);'
           command: !lambda 'return "0x" + format_hex(x.command);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "RC5"
@@ -419,10 +419,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "RC6"
           address: !lambda 'return "0x" + format_hex(x.address);'
           command: !lambda 'return "0x" + format_hex(x.command);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "RC6"
@@ -431,9 +431,9 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Roomba"
           data: !lambda 'return "0x" + format_hex(x.data);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Roomba"
@@ -442,10 +442,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Samsung"
           data: !lambda 'return "0x" + format_hex(x.data);'
           nbits: !lambda "return x.nbits;"
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Samsung"
@@ -454,10 +454,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Samsung36"
           address: !lambda 'return "0x" + format_hex(x.address);'
           command: !lambda 'return "0x" + format_hex(x.command);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Samsung36"
@@ -466,10 +466,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Sony"
           data: !lambda 'return "0x" + format_hex(x.data);'
           nbits: !lambda "return x.nbits;"
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Sony"
@@ -478,10 +478,10 @@ remote_receiver:
     - homeassistant.event:
         event: esphome.hassbeam.ir_received
         data:
+          hassbeam_device: ${device_name_sub}
           protocol: "Toshiba AC"
           rc_code_1: !lambda 'return "0x" + format_hex(x.rc_code_1);'
           rc_code_2: !lambda 'return "0x" + format_hex(x.rc_code_2);'
-          device_name: device_name
     - script.execute:
         id: update_protocol_received
         protocol: "Toshiba AC"

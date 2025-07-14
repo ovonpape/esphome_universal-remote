@@ -15,9 +15,10 @@ sections:
             icon: mdi:power-on
             icon_color: green
             tap_action:
-              action: perform-action
-              perform_action: script.avr_on
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: power
             primary: "ON"
             badge_icon: ""
             badge_color: ""
@@ -30,8 +31,10 @@ sections:
             icon: mdi:power-off
             icon_color: red
             tap_action:
-              action: perform-action
-              perform_action: script.avr_standby
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: standby
               target: {}
             layout: vertical
             fill_container: true
@@ -45,9 +48,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:television
             tap_action:
-              action: perform-action
-              perform_action: script.avr_channel_tv
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_tv
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -59,8 +63,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:controller
             tap_action:
-              action: perform-action
-              perform_action: script.avr_channel_game1
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_game1
               target: {}
             badge_icon: ""
             badge_color: ""
@@ -73,9 +79,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:music
             tap_action:
-              action: perform-action
-              perform_action: script.avr_channel_game2
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_game2
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -87,8 +94,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:web
             tap_action:
-              action: perform-action
-              perform_action: script.avr_channel_netusb
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_netusb
               target: {}
             badge_icon: ""
             badge_color: ""
@@ -101,8 +110,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:exit-to-app
             tap_action:
-              action: perform-action
-              perform_action: script.avr_sourceselect
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_sourceselect
               target: {}
             badge_icon: ""
             badge_color: ""
@@ -119,9 +130,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-up
             tap_action:
-              action: perform-action
-              perform_action: script.avr_channel_up
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_up
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -133,9 +145,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-up
             tap_action:
-              action: perform-action
-              perform_action: script.avr_volume_up
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_volume_up
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -147,9 +160,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-down
             tap_action:
-              action: perform-action
-              perform_action: script.avr_channel_down
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: channel_down
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -162,9 +176,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-down
             tap_action:
-              action: perform-action
-              perform_action: script.avr_volume_down
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: volume_down
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -182,9 +197,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-up
             tap_action:
-              action: perform-action
-              perform_action: script.avr_up
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: up
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -197,9 +213,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:volume-mute
             tap_action:
-              action: perform-action
-              perform_action: script.tv_mute
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: mute
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -212,9 +229,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-left
             tap_action:
-              action: perform-action
-              perform_action: script.avr_left
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: left
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -225,9 +243,10 @@ sections:
             primary: ""
           - type: custom:mushroom-template-card
             tap_action:
-              action: perform-action
-              perform_action: script.avr_enter
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: enter
             badge_icon: ""
             badge_color: ""
             icon: mdi:check
@@ -239,9 +258,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-right
             tap_action:
-              action: perform-action
-              perform_action: script.avr_right
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: right
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -254,9 +274,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:keyboard-return
             tap_action:
-              action: perform-action
-              perform_action: script.avr_return
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: return
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -268,9 +289,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-down
             tap_action:
-              action: perform-action
-              perform_action: script.avr_down
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: down
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -283,8 +305,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:menu
             tap_action:
-              action: perform-action
-              perform_action: script.avr_menu
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: menu
               target: {}
             badge_icon: ""
             badge_color: ""
@@ -302,8 +326,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:equalizer
             tap_action:
-              action: perform-action
-              perform_action: script.avr_chlevel
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: chlevel
               target: {}
             badge_icon: ""
             badge_color: ""
@@ -317,9 +343,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:sleep
             tap_action:
-              action: perform-action
-              perform_action: script.avr_sleep
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: sleep
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -334,9 +361,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:movie-outline
             tap_action:
-              action: perform-action
-              perform_action: script.avr_eq_movie
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: eq_movie
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -348,9 +376,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:music
             tap_action:
-              action: perform-action
-              perform_action: script.avr_eq_music
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: eq_music
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -362,9 +391,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:controller
             tap_action:
-              action: perform-action
-              perform_action: script.avr_eq_game
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: eq_game
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -376,9 +406,10 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-top-right
             tap_action:
-              action: perform-action
-              perform_action: script.avr_eq_direct
-              target: {}
+              action: hassbeam_connect_backend.send_ir_code
+              data:
+                device: avr
+                action: eq_direct
             badge_icon: ""
             badge_color: ""
             fill_container: true
