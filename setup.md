@@ -57,8 +57,8 @@ HassBeam Connect comes in two separate repos that contain the backend and fronte
 - open HACS and click on the settings in the top right corner
 - select custom repository
 - add these two repositories:
-  - Backend: `https://github.com/BasilBerg/hassbeam-connect-backend` Type: Integration 
-  - Lovelace Cards: `https://github.com/BasilBerg/hassbeam-connect-cards` Type: Dashboard
+  - [Backend](https://github.com/BasilBerg/hassbeam-connect-backend): `https://github.com/BasilBerg/hassbeam-connect-backend` Type: Integration 
+  - [Lovelace Cards](https://github.com/BasilBerg/hassbeam-connect-cards): `https://github.com/BasilBerg/hassbeam-connect-cards` Type: Dashboard
 - Search `HassBeam` in HACS and install `HassBeam Connect Backend` and `HassBeam Connect Cards`
 - Go to Devices & Services and add the `HassBeam Connect Backend``Integration
 - You can now add the `hassbeam-setup-card` and `hassbeam-manager-card` on any lovelace dashboard or use the [provided template dashboard](homeassistant/dashboard_hassbeam-connect_example.yaml)
