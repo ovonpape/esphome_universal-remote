@@ -7,7 +7,7 @@ It allows you to replace your pile of different remote controls with one station
   <img src="homeassistant/dashboard_example.png" alt="Dashboard Example" width="42.5%" />
 </p>
 
-#### With the new [HassBeam Connect integration](setup.md#using-hassbeamconnect-to-capture-commands), configuring your system is faster and simpler than ever:
+#### With the new [HassBeam Connect integration](#hassbeam-connect), configuring your system is faster and simpler than ever:
 <p float="left">
   <img src="homeassistant/setup.gif" alt="setup process" width="92.5%" />
 </p>
@@ -55,6 +55,12 @@ We’d love to hear your feedback and see what you build!
 <br>
 
 ## 🔗 Related Projects
+
+#### HassBeam Connect
+A quick and easy way to capture and manage your IR codes in Homeassistant:
+  - [HassBeam Connect Backend](https://github.com/BasilBerg/hassbeam-connect-backend)
+  - [HassBEam Connect Cards](https://github.com/BasilBerg/hassbeam-connect-cards)
+</br>
 
 Check out these projects that helped in the creation of this project:
 - [ESPHome](https://github.com/esphome/esphome)  
