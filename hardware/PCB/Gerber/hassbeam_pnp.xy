@@ -4,7 +4,7 @@
 # eMail=
 #
 # Project=hassbeam
-# Date=00:14:43
+# Date=18:43:21
 # CreatedBy=Fritzing 1.0.2b.2023-12-20.1.0.2
 #
 #
@@ -14,10 +14,12 @@
 #
 RefDes,Description,Package,X,Y,Rotation,Side,Mount
 Description: resistance;capacitance;inductance;voltage;current;power;mpn;mn;
-R1,"11;;;;;;;;","0805 [SMD]",238.292,1795.98,90,Top,SMT
-sensor,";;;;;;;;","THT",238.293,736.331,0,Top,THT
-power,";;;;;;;;","THT",238.293,186.331,0,Top,THT
-Q1,";;;;;;;;","TO92 [THT]",134.793,1143.83,90,Top,THT
+R1,"11;;;;;;;;","0805 [SMD]",238.792,1672.18,90,Top,SMT
+C1,";100nF;;35V;;;;;","100 mil [THT, multilayer]",138.793,461.831,-90,Top,THT
+Q1,";;;;;;;;","TO92 [THT]",242.293,1124.33,-90,Top,THT
 U1,";;;;;;;;","",887.468,1035.31,90,Top,MANUAL
-R2,"1k;;;;;;;;","0805 [SMD]",138.292,1795.98,-90,Top,SMT
+J1,";;;;;;;;","THT",138.793,1931.83,0,Top,THT
+IR,";;;;;;;;","THT",238.793,631.831,0,Top,THT
+R2,"1k;;;;;;;;","0805 [SMD]",338.792,1091.48,90,Top,SMT
 D1,";;;;;;;;","lte-302",253.293,1486.33,-90,Top,SMT
+R3,"100;;;;;;;;","0805 [SMD]",238.793,372.185,90,Top,SMT

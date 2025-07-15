@@ -13,22 +13,25 @@
 To build the ESPHome Universal Remote, you’ll need:
 
 - **Resistors**  
-  Limit current through the IR LED and transistor. In this build: 11 Ohms for the LED and 1k Ohms for the transistor. Choose a value based on the datasheets of your components.
+  Limit current through the IR LED and transistor. In this build: 11 Ohms for the LED, 1k Ohms for the transistor and 100 Ohms for the IR-Receiver. Choose a value based on the datasheets of your components.
+
+- **Capacitor** (optional)
+  A capacitor is used to filter high frequency noise. this improves reliability of the IR Receiver but is completely optional. In this example I'm using a 100nF capacitor.
 
 - **IR LED**  
   Emits the infrared signals. Use a 940 nm LED for best compatibility. Narrow beam for focused control, wide for room coverage.
 
 - **NPN Transistor**  
-  Used to drive the LED safely, as ESP32 GPIOs can't handle high current directly.
+  Used to drive the LED safely, as ESP32 GPIOs can't handle high current.
 
 - **IR Receiver**  
-  Allows reading commands from existing remotes. These are also available pre-mounted on breakout boards, which often include filtering components, resulting in more reliable readings.
+  Allows reading commands from existing remotes. The carrier frequency of most common IR protocols is 38kHz, so the receiver you pick should support that. In this example I'm using a TSOP4838
 
 - **ESP32**  
     Any ESP32 model supported by ESPHome can be used, but you may need to adjust the wiring and case design to accommodate differences in pin layout and physical dimensions.
 
 - **(Optional) Pin Headers**  
-  Useful for detachable power or signal connections.
+  Useful for detachable power or signal connections. If you want to build multiple HassBeams, you can make the receiver circuit modular to save cost (and soldering time).
 
 ---
 
@@ -39,18 +42,16 @@ To build the ESPHome Universal Remote, you’ll need:
 The circuit can be assembled on a breadboard for prototyping. For a more permanent installation, you can solder the components onto a perfboard or use a custom PCB.  
 The images below serve as wiring references, and the included Fritzing file can be viewed or edited as needed.  
 
-Note: These wiring diagrams omit the IR receiver itself and instead show a 3-pin header, which is intended for connecting the receiver module when capturing commands from an existing remote.  
-In this configuration the board can either be powered via USB, a 5V DC connection to the 2-Pin header (red wire = 5v, blue wire = GND) or a 3.3V DC connection to the 3-Pin header (orange wire = 3.3v, blue wire = GND).
-
 <p float="left">
-  <img src="hardware/fritzing/images/perfboard.png" alt="Perfboard" width="45%" />
-  <img src="hardware/fritzing/images/schematics.png" alt="Schematics" width="45.4%" />
+
+  <img src="hardware/fritzing/images/schematics.png" alt="Schematics" width="90%" />
+    <img src="hardware/fritzing/images/perfboard.png" alt="Perfboard" width="50%" />
 </p>
 
 ### Custom PCB
 
 A [PCB design is provided](hardware/PCB) with Gerber files ready for fabrication. The single layer layout is simple and affordable to order.
-The provided board was not tested in combination with the provided case, so if you want to use them together please double check the dimensions before ordering.
+The provided board was not tested in combination with the provided case yet, so if you want to use them together please double check the dimensions before ordering.
 
 <p float="left">
   <img src="hardware/fritzing/images/pcb.png" alt="pcb" width="45%" />
