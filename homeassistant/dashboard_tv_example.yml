@@ -15,7 +15,9 @@ sections:
             icon: mdi:power-standby
             icon_color: red
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: power
@@ -31,7 +33,9 @@ sections:
             icon: mdi:exit-to-app
             icon_color: null
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: source
@@ -46,7 +50,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:netflix
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: app_netflix
@@ -61,7 +67,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: null
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: app_disney
@@ -76,7 +84,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: null
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: app_amazon
@@ -91,7 +101,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: null
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: app_wow
@@ -106,7 +118,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:youtube
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: app_youtube
@@ -121,7 +135,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:heart-outline
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: app_favorite
@@ -139,8 +155,11 @@ sections:
             icon: mdi:arrow-up
             tap_action:
               action: perform-action
-              perform_action: script.tv_channel_up
+              perform_action: hassbeam_connect_backend.send_ir_code
               target: {}
+              data:
+                device: tv
+                action: channel_up
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -153,8 +172,11 @@ sections:
             icon: mdi:arrow-up
             tap_action:
               action: perform-action
-              perform_action: script.tv_volume_up
+              perform_action: hassbeam_connect_backend.send_ir_code
               target: {}
+              data:
+                device: tv
+                action: volume_up
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -167,8 +189,11 @@ sections:
             icon: mdi:arrow-down
             tap_action:
               action: perform-action
-              perform_action: script.tv_channel_down
+              perform_action: hassbeam_connect_backend.send_ir_code
               target: {}
+              data:
+                device: tv
+                action: channel_down
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -182,8 +207,11 @@ sections:
             icon: mdi:arrow-down
             tap_action:
               action: perform-action
-              perform_action: script.tv_volume_down
+              perform_action: hassbeam_connect_backend.send_ir_code
               target: {}
+              data:
+                device: tv
+                action: volume_down
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -199,7 +227,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:closed-caption
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: subtitle
@@ -215,7 +245,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-up
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: up
@@ -231,7 +263,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:volume-mute
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: mute
@@ -247,7 +281,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-left
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: left
@@ -261,7 +297,9 @@ sections:
             primary: ""
           - type: custom:mushroom-template-card
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: ok
@@ -276,11 +314,12 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-right
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: right
-              target: {}
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -295,7 +334,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:arrow-down
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: down
@@ -311,11 +352,12 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:menu
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: menu
-              target: {}
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -334,8 +376,11 @@ sections:
             icon: mdi:keyboard-return
             tap_action:
               action: perform-action
-              perform_action: script.tv_back
+              perform_action: hassbeam_connect_backend.send_ir_code
               target: {}
+              data:
+                device: tv
+                action: back
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -348,8 +393,11 @@ sections:
             icon: mdi:home
             tap_action:
               action: perform-action
-              perform_action: script.tv_home
+              perform_action: hassbeam_connect_backend.send_ir_code
               target: {}
+              data:
+                device: tv
+                action: home
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -362,8 +410,11 @@ sections:
             icon: mdi:close
             tap_action:
               action: perform-action
-              perform_action: script.tv_exit
+              perform_action: hassbeam_connect_backend.send_ir_code
               target: {}
+              data:
+                device: tv
+                action: exit
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -378,11 +429,12 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-1
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: one
-              target: {}
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -393,7 +445,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-2
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: two
@@ -407,7 +461,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-3
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: three
@@ -422,7 +478,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-4
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: four
@@ -436,7 +494,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-5
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: five
@@ -450,7 +510,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-6
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: six
@@ -464,7 +526,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-7
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: seven
@@ -478,11 +542,13 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-8
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: eight
-              target: {}
+                target: {}
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -493,11 +559,13 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-9
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: nine
-              target: {}
+                target: {}
             badge_icon: ""
             badge_color: ""
             fill_container: true
@@ -509,7 +577,9 @@ sections:
           - type: custom:mushroom-template-card
             icon: mdi:numeric-0
             tap_action:
-              action: hassbeam_connect_backend.send_ir_code
+              action: perform-action
+              perform_action: hassbeam_connect_backend.send_ir_code
+              target: {}
               data:
                 device: tv
                 action: zero
