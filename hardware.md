@@ -22,16 +22,16 @@ To build the ESPHome Universal Remote, you’ll need:
   Emits the infrared signals. Use a 940 nm LED for best compatibility. Narrow beam for focused control, wide for room coverage.
 
 - **NPN Transistor**  
-  Used to drive the LED safely, as ESP32 GPIOs can't handle high current.
+  Used to drive the LED safely, as ESPs GPIO pins can't handle high current.
 
 - **IR Receiver**  
   Allows reading commands from existing remotes. The carrier frequency of most common IR protocols is 38kHz, so the receiver you pick should support that. In this example I'm using a TSOP4838
 
-- **ESP32**  
-    Any ESP32 model supported by ESPHome can be used, but you may need to adjust the wiring and case design to accommodate differences in pin layout and physical dimensions.
+- **ESP microcontroller**  
+    Any ESP microcontroller supported by ESPHome can be used, but you may need to adjust the wiring and case design to accommodate differences in pin layout and physical dimensions. In this example, an ESP32 WROOOM32 devboard is used
 
 - **(Optional) Pin Headers**  
-  Useful for detachable power or signal connections. If you want to build multiple HassBeams, you can make the receiver circuit modular to save cost (and soldering time).
+  Useful for detachable power or signal connections. If you want to build multiple HassBeams, you can make the receiver circuit modular to save cost and make the device smaller.
 
 ---
 
@@ -62,7 +62,6 @@ The provided board was not tested in combination with the provided case yet, so 
 
 A 3D-printable case is available to protect and mount the remote. It’s optional but recommended for permanent or visible installations.
 This case is intended for the use of an ESP32 development board and a 4 x 6 cm (in this case 14 x 20 holes) perf board or PCB.
-You could reduce the size fo the case if you use an ESP without USB and a smaller perfboard.
 
 ### Download
 
