@@ -79,3 +79,7 @@ The case is available in the following formats:
   <img src="hardware/case/images/case_topdown_closed.jpg" alt="case_topdown_closed" width="45%" />
   <img src="hardware/case/images/case_topdown_open.jpg" alt="case_topdown_open" width="45%" />
 </p>
+
+### 🛠️ Setup Guide
+
+Once your hardware is ready, continue with the [Setup Guide](setup.md) to learn how to install and use the project.
