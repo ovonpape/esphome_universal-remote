@@ -13,15 +13,19 @@
 
 ---
 
+### ⚙️ Hardware Guide
+Before starting with the setup, read the [Hardware Guide](hardware.md) for instructions on what you need and how to build it.
+
+
 ## Installation
 
 Clone this repository or download the latest release.
 
-To install the the software on your ESP32, first make sure to configure your Wi-Fi credentials.  
+To install the the software on your ESP, first make sure to configure your Wi-Fi credentials.  
 A sample configuration is provided in the [esphome folder](esphome). You just need to rename the file `secrets_template.yaml` to `secrets.yaml` and adjust it with your local SSID and password.  
-After that you can flash the provided configuration file `hassbeam.yaml` using [ESPHome](https://esphome.io/).  
+After that you can flash the provided configuration file `hassbeam.yaml` using [ESPHome](https://esphome.io/). 
 
-While ESPHome can be used directly within Home Assistant, **compilation on limited hardware can be extremely slow**. It's recommended to install and use the ESPHome CLI on a PC for faster builds and flashing. You can find installation instructions in the [ESPHome Getting Started guide](https://esphome.io/guides/getting_started_command_line.html).
+While the ESPHome device builder can be used directly within Home Assistant, **compilation on limited hardware can be extremely slow**. It's recommended to install and use the ESPHome CLI on a PC for faster builds and flashing. You can find installation instructions in the [ESPHome Getting Started guide](https://esphome.io/guides/getting_started_command_line.html).
 
 #### ESPHome CLI (recommended)
 
@@ -31,10 +35,11 @@ While ESPHome can be used directly within Home Assistant, **compilation on limit
 - select the proper device
 - The code should now be compiled and flashed to the device
 
-#### ESPHome Dashboard (not recommended for most cases)
+#### ESPHome Device Builder (not recommended for most cases)
 
 - [Physically Connecting to your Device](https://esphome.io/guides/physical_device_connection#physically-connecting-to-your-device)
 - [Device Builder](https://esphome.io/guides/getting_started_hassio#device-builder-interface)
+- set the device builder secrets to the contents of `secrets_template.yaml`, make sure to fill in your wifi credentials 
 - copy the code inside `hassbeam.yaml` and flash it to the device
 
 <br>
@@ -114,7 +119,7 @@ data:
 
 ### Creating a Dashboard to Control Devices
 
-You can create a user interface in Home Assistant to trigger these scripts easily. In the example setup, one dashboard page per remote is created (e.g., TV, AVR). The layout uses the [Mushroom](https://github.com/piitaya/lovelace-mushroom) custom cards from HACS for a clean and modern interface.
+You can create a user interface in Home Assistant to trigger these commands. In the example setup, one dashboard page per remote is created (e.g., TV, AVR). The layout uses the [Mushroom](https://github.com/piitaya/lovelace-mushroom) custom cards from HACS for a clean and modern interface.
 
 Example dashboard configurations are provided:
 
